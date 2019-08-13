@@ -1,0 +1,40 @@
+sudo: false
+
+language: node_js
+
+cache:
+  directories: ~/.npm
+
+notifications:
+  email: false
+
+node_js:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+
+install:
+  - travis_retry npm install
+
+script:
+  - node --version
+  - npm --version
+  - npm test
+
+after_success:
+  - npm run report-coverage
+
+jobs:
+  include:
+    - stage: release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npm install -g semantic-release && semantic-release
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

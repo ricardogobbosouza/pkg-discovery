@@ -1,0 +1,68 @@
+{
+  "name": "pkg-discovery",
+  "version": "0.0.0-development",
+  "description": "Discovery the dependencies and devDependencies of package",
+  "keywords": [
+    "package",
+    "discovery",
+    "dependencies",
+    "devDependencies",
+    "read",
+    "parse",
+    "find",
+    "look",
+    "search"
+  ],
+  "homepage": "https://github.com/ricardogobbosouza/pkg-discovery",
+  "bugs": {
+    "url": "https://github.com/ricardogobbosouza/pkg-discovery/issues",
+    "email": "ricardogobbosouza@yahoo.com.br"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ricardo Gobbo de Souza",
+    "email": "ricardogobbosouza@yahoo.com.br",
+    "role": "Developer"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardogobbosouza/pkg-discovery.git"
+  },
+  "scripts": {
+    "commit": "commit",
+    "coverage": "jest --coverage",
+    "lint": "eslint lib/ test/",
+    "precoverage": "rimraf coverage/",
+    "pretest": "npm run lint",
+    "report-coverage": "codecov",
+    "test": "npm run coverage",
+    "watch": "jest --watchAll"
+  },
+  "dependencies": {
+    "read-pkg": "^5.2.0",
+    "read-pkg-up": "^6.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@commitlint/prompt-cli": "latest",
+    "@datalogix/eslint-config": "latest",
+    "codecov": "latest",
+    "eslint": "latest",
+    "eslint-plugin-jest": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "rimraf": "latest"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}
